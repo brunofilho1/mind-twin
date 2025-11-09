@@ -15,6 +15,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -25,6 +35,9 @@ a:hover {
 }
 
 body {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   margin: 0;
   display: flex;
   place-items: center;
@@ -66,5 +79,56 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.5));
+  }
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8));
+  }
+}
+
+@keyframes particle-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translateY(-40px);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(400%);
   }
 }

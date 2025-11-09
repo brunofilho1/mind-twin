@@ -15,7 +15,7 @@ export async function analyzeWithAI(idea: string): Promise<string> {
 
     Respond in the same language used in the user's query.
 
-    Write your answer as a single short paragraph (no numbered or bulleted items, no line breaks, no periods between sentences, just a natural continuous text) including:
+    Start by saying similar things like "This idea already/doesn't exist etc...", write your answer as a single short paragraph (no numbered or bulleted items, no line breaks, no periods between sentences, just a natural continuous text) including:
     1. Whether something similar exists (Yes/No/Partially, and name existing ones if any)
     2. What could be the possible differentiator (if similar ones exist, start with "a differentiator from existing ones could be...", if none exist, clearly state it is a unique idea)
     3. Whether it is worth developing (Yes/No, explain briefly why)
