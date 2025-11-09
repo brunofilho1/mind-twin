@@ -7,7 +7,8 @@ export function Footer() {
           <span className="font-semibold text-indigo-600">Bruno Filho</span>
         </p>
         <p className="text-gray-400 text-xs mt-2">
-          © 2025 MindTwin. Validando ideias com inteligência.
+          © {new Date().getFullYear()} MindTwin. Validando ideias com
+          inteligência.
         </p>
       </div>
     </div>
