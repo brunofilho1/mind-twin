@@ -1,8 +1,8 @@
-# 🔍 MinTwin
+# 🔍 MindTwin
 
 > **Valide suas ideias de negócio em segundos**
 
-MinTwin é uma ferramenta moderna e interativa que ajuda empreendedores e criadores a descobrir se suas ideias já existem no mercado. Com uma interface elegante e animada, você pode validar conceitos rapidamente e tomar decisões mais informadas.
+MindTwin é uma ferramenta moderna e interativa que ajuda empreendedores e criadores a descobrir se suas ideias já existem no mercado. Com uma interface elegante e animada, você pode validar conceitos rapidamente e tomar decisões mais informadas.
 
 ![imagem da página inicial](public/image.png)
 
@@ -13,12 +13,13 @@ MinTwin é uma ferramenta moderna e interativa que ajuda empreendedores e criado
 - **Tailwind CSS** - Estilização utilitária
 - **Lucide React** - Ícones modernos
 - **Vite** - Build tool rápido
+- **Google Gemini** Modelo de IA
 
 ## 📦 Instalação
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/mintwin.git
+git clone https://github.com/brunofilho1/mind-twin
 
 # Entre na pasta do projeto
 cd mintwin
@@ -33,8 +34,8 @@ npm run dev
 ## 🎯 Como Usar
 
 1. Digite sua ideia de negócio no campo de busca
-2. Clique em "Validar" ou pressione Enter
-3. Aguarde a análise (atualmente simulada)
+2. Pressione Enter
+3. Aguarde a análise
 4. Receba feedback sobre a existência de conceitos similares
 
 ## 📝 Licença

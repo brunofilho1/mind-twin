@@ -5,7 +5,7 @@ export function Header() {
     <div className="w-full max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
       <div>
         <h4 className="font-bold text-2xl text-gray-900 tracking-tight">
-          MinTwin
+          MindTwin
         </h4>
       </div>
 
