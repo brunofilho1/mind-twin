@@ -2,6 +2,7 @@ import { Loader2Icon, SearchIcon, SparklesIcon } from "lucide-react";
 import { useState } from "react";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
+import { analyzeWithAI } from "./lib/api/api";
 
 export default function App() {
   const [idea, setIdea] = useState("");
@@ -9,23 +10,22 @@ export default function App() {
   const [result, setResult] = useState<string | null>(null);
   const [isFocused, setIsFocused] = useState(false);
 
-  const simulateAIThinking = async () => {
+  const checkIdea = async () => {
     if (!idea.trim()) return;
 
     setIsThinking(true);
     setResult(null);
 
-    await new Promise((resolve) => setTimeout(resolve, 2500));
+    try {
+      const analysis = await analyzeWithAI(idea);
 
-    const responses = [
-      `A ideia "${idea}" tem potencial! Existem conceitos similares no mercado, mas há espaço para diferenciação.`,
-      `Interessante! "${idea}" já foi explorado, mas com uma abordagem única você pode se destacar.`,
-      `"${idea}" é inovador! Não encontrei algo exatamente assim. Vale a pena explorar mais.`,
-      `A ideia "${idea}" tem algumas variações existentes. Recomendo pesquisar mais sobre a concorrência antes de seguir.`,
-    ];
-
-    setResult(responses[Math.floor(Math.random() * responses.length)]);
-    setIsThinking(false);
+      setResult(analysis);
+    } catch (error: unknown) {
+      setResult("Ops! Algo deu errado. Tente novamente.");
+      console.error(error);
+    } finally {
+      setIsThinking(false);
+    }
   };
 
   return (
@@ -39,7 +39,7 @@ export default function App() {
               <SparklesIcon className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-5xl font-bold bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3">
-              Sua ideia já existe?
+              Minha ideia já existe?
             </h1>
             <p className="text-gray-600 text-lg">
               Descubra se sua ideia é única ou se já existe algo similar no
@@ -78,7 +78,7 @@ export default function App() {
                     onKeyDown={(e) => {
                       if (e.key === "Enter" && idea.trim() && !isThinking) {
                         e.preventDefault();
-                        simulateAIThinking();
+                        checkIdea();
                       }
                     }}
                     placeholder="Ex: Um app de meditação com IA personalizada..."
@@ -87,7 +87,7 @@ export default function App() {
                   />
 
                   <button
-                    onClick={simulateAIThinking}
+                    onClick={checkIdea}
                     disabled={!idea.trim() || isThinking}
                     className="mr-2 px-8 py-4 bg-linear-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl hover:from-indigo-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:hover:scale-100"
                   >
