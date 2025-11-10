@@ -28,6 +28,6 @@ export async function analyzeWithAI(idea: string): Promise<string> {
     return text || "Erro ao analisar";
   } catch (error) {
     console.error("Erro na IA:", error);
-    return "Não foi possível analisar no momento. Verifique sua API key.";
+    return "Não foi possível analisar essa ideia no momento. Problema inesperado da aplicação 😵‍💫";
   }
 }
