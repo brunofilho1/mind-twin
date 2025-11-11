@@ -4,6 +4,8 @@
 
 MindTwin é uma ferramenta moderna e interativa que ajuda empreendedores e criadores a descobrir se suas ideias já existem no mercado. Com uma interface elegante e animada, você pode validar conceitos rapidamente e tomar decisões mais informadas.
 
+Você pode testar [por aqui](https://mind-twin.vercel.app/)
+
 ![imagem da página inicial](public/image.png)
 
 ## 🚀 Tecnologias
